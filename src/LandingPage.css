@@ -200,13 +200,13 @@
   letter-spacing: -0.01em;
 }
 
-/* Mountain peak SVG placement */
-.banner-mountains-svg {
+/* Watch blueprint SVG placement */
+.banner-watch-svg {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: auto;
+  bottom: -10px;
+  right: -10px;
+  height: 110px;
+  width: 110px;
   z-index: 1;
   pointer-events: none;
 }

@@ -224,41 +224,48 @@ export default function LandingPage() {
                     </AnimatePresence>
                   </div>
 
-                  {/* Peak Mountains Illustration Vector */}
-                  <svg className="banner-mountains-svg" viewBox="0 0 220 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Background Soft Peak */}
-                    <path d="M120 100 L165 30 L210 100 Z" fill="url(#bgMountainGrad)" opacity="0.06" />
+                  {/* Watch Blueprint Illustration Vector */}
+                  <svg className="banner-watch-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Outer Case */}
+                    <circle cx="50" cy="50" r="34" stroke="var(--warm-brown)" strokeWidth="0.8" opacity="0.12" />
                     
-                    {/* Main Matterhorn 3D Shaded Peaks */}
-                    {/* Left Shade Face */}
-                    <path d="M140 15 L70 100 L135 100 L142 70 L130 45 Z" fill="url(#mountainLeftGrad)" opacity="0.14" />
-                    {/* Right Light Face */}
-                    <path d="M140 15 L205 100 L135 100 L142 70 L130 45 Z" fill="url(#mountainRightGrad)" opacity="0.05" />
+                    {/* Bezel */}
+                    <circle cx="50" cy="50" r="30" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.10" />
+                    <circle cx="50" cy="50" r="28" stroke="var(--warm-brown)" strokeWidth="0.4" strokeDasharray="1 1" opacity="0.14" />
+
+                    {/* Dial Outer Ring */}
+                    <circle cx="50" cy="50" r="25" stroke="var(--warm-brown)" strokeWidth="0.5" opacity="0.08" />
+
+                    {/* Straps Lugs & Links */}
+                    <path d="M36 17 L34 2 M64 17 L66 2" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.10" />
+                    <path d="M36 83 L34 98 M64 83 L66 98" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.10" />
+                    <path d="M38 10 L62 10 M38 5 L62 5 M38 90 L62 90 M38 95 L62 95" stroke="var(--warm-brown)" strokeWidth="0.4" opacity="0.08" />
+
+                    {/* Watch Crown & Pushers */}
+                    <path d="M84 46 L88 46 L88 54 L84 54 Z" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.12" />
+                    <path d="M86 46 L86 54" stroke="var(--warm-brown)" strokeWidth="0.4" strokeDasharray="1 1" opacity="0.12" />
+                    <path d="M78 28 L81 25 L83 27 L80 30" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.10" />
+                    <path d="M78 72 L81 75 L83 73 L80 70" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.10" />
+
+                    {/* Dial Ticks */}
+                    <path d="M50 25 L50 27 M50 75 L50 73 M25 50 L27 50 M75 50 L73 50" stroke="var(--warm-brown)" strokeWidth="0.8" opacity="0.18" />
+                    <path d="M32.5 32.5 L34 34 M67.5 32.5 L66 34 M32.5 67.5 L34 66 M67.5 67.5 L66 66" stroke="var(--warm-brown)" strokeWidth="0.5" opacity="0.12" />
+
+                    {/* Chrono Sub-dials */}
+                    <circle cx="50" cy="62" r="6" stroke="var(--warm-brown)" strokeWidth="0.5" opacity="0.08" />
+                    <line x1="50" y1="62" x2="48" y2="59" stroke="var(--warm-brown)" strokeWidth="0.4" opacity="0.10" />
                     
-                    {/* Swiss Alps Ridge Lines & Slopes */}
-                    <path d="M140 15 L130 45 L142 70 L135 100" stroke="var(--warm-brown)" strokeWidth="1.2" strokeLinecap="round" opacity="0.25" />
-                    <path d="M125 35 L105 70" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.18" />
-                    <path d="M110 50 L90 90" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.15" />
-                    <path d="M152 32 L175 70" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.18" />
-                    <path d="M165 50 L190 90" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.15" />
+                    <circle cx="38" cy="50" r="5" stroke="var(--warm-brown)" strokeWidth="0.5" opacity="0.08" />
+                    <line x1="38" y1="50" x2="41" y2="52" stroke="var(--warm-brown)" strokeWidth="0.4" opacity="0.10" />
+                    
+                    <circle cx="62" cy="50" r="5" stroke="var(--warm-brown)" strokeWidth="0.5" opacity="0.08" />
+                    <line x1="62" y1="50" x2="60" y2="47" stroke="var(--warm-brown)" strokeWidth="0.4" opacity="0.10" />
 
-                    {/* Texture Hatching Lines for snow slopes */}
-                    <path d="M115 70 L108 82 M122 80 L115 92 M158 60 L165 72 M170 78 L177 90" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.12" />
-
-                    <defs>
-                      <linearGradient id="bgMountainGrad" x1="165" y1="30" x2="165" y2="100" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="var(--warm-tan)" />
-                        <stop offset="1" stopColor="var(--warm-tan)" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="mountainLeftGrad" x1="105" y1="15" x2="105" y2="100" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="var(--warm-brown)" />
-                        <stop offset="1" stopColor="var(--warm-brown)" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="mountainRightGrad" x1="172" y1="15" x2="172" y2="100" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="var(--warm-gold)" />
-                        <stop offset="1" stopColor="var(--warm-gold)" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
+                    {/* Hands (10:10 position) */}
+                    <circle cx="50" cy="50" r="1.5" fill="var(--warm-brown)" opacity="0.20" />
+                    <path d="M50 50 L38 38" stroke="var(--warm-brown)" strokeWidth="1.0" strokeLinecap="round" opacity="0.20" />
+                    <path d="M50 50 L68 32" stroke="var(--warm-brown)" strokeWidth="0.7" strokeLinecap="round" opacity="0.20" />
+                    <line x1="50" y1="50" x2="50" y2="28" stroke="var(--warm-tan)" strokeWidth="0.4" opacity="0.20" />
                   </svg>
                 </div>
 

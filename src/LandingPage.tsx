@@ -13,7 +13,8 @@ import {
   MessageSquare, 
   HelpCircle, 
   MapPin,
-  ArrowRight
+  ArrowRight,
+  Watch
 } from 'lucide-react';
 import mapping from './config/mapping.json';
 import './LandingPage.css';
@@ -126,6 +127,8 @@ export default function LandingPage() {
   const [selectedBrand, setSelectedBrand] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  const activeBrandInfo = brandInfo[selectedBrand] || brandInfo['All'];
+
   // Process mapping into list
   const manualsList = useMemo((): ManualItem[] => {
     return Object.entries(mapping).map(([slug, value]) => {
@@ -198,11 +201,44 @@ export default function LandingPage() {
               >
                 {/* Welcome Card Banner */}
                 <div className="welcome-banner">
-                  <span className="banner-tag">Pindai & Temukan</span>
-                  <h3 className="banner-title">Chronologie Watch Manuals</h3>
-                  <p className="banner-desc">
-                    Selamat datang di asisten digital Anda. Silakan cari manual atau filter berdasarkan brand jam tangan Anda di bawah ini.
-                  </p>
+                  {/* Watch Medallion Icon */}
+                  <div className="banner-icon-wrapper">
+                    <div className="banner-icon-inner">
+                      <Watch style={{ width: '20px', height: '20px' }} />
+                    </div>
+                  </div>
+
+                  {/* Banner Content (Crossfading dynamically on brand selection) */}
+                  <div className="banner-content">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={selectedBrand}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 8 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <span className="banner-tag">{activeBrandInfo.tag}</span>
+                        <p className="banner-desc">{activeBrandInfo.desc}</p>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Peak Mountains Illustration Vector */}
+                  <svg className="banner-mountains-svg" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 100 L135 40 L155 70 L175 35 L210 100 Z" fill="url(#mountainGrad)" opacity="0.12" />
+                    <path d="M60 100 L105 25 L145 80 L165 50 L200 100 Z" fill="url(#mountainGrad2)" opacity="0.08" />
+                    <defs>
+                      <linearGradient id="mountainGrad" x1="155" y1="35" x2="155" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="var(--warm-brown)" />
+                        <stop offset="1" stopColor="var(--warm-brown)" stopOpacity="0" />
+                      </linearGradient>
+                      <linearGradient id="mountainGrad2" x1="130" y1="25" x2="130" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="var(--warm-tan)" />
+                        <stop offset="1" stopColor="var(--warm-tan)" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 </div>
 
                 {/* Search Bar */}

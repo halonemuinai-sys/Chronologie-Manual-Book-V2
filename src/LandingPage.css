@@ -128,38 +128,87 @@
 /* Info banner/hero card */
 .welcome-banner {
   background: linear-gradient(135deg, var(--warm-gold) 0%, var(--warm-50) 100%);
-  border: 1px solid rgba(68, 42, 7, 0.1);
+  border: 1px solid rgba(68, 42, 7, 0.08);
   border-radius: 1.25rem;
-  padding: 1.25rem;
+  padding: 1.125rem 1.25rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 20px rgba(68, 42, 7, 0.05);
+  box-shadow: 0 4px 20px rgba(68, 42, 7, 0.04);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+}
+
+.banner-icon-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(68, 42, 7, 0.06);
+  box-shadow: 0 4px 10px rgba(68, 42, 7, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.welcome-banner:hover .banner-icon-wrapper {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.banner-icon-inner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--warm-brown);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--warm-50);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+  flex: 1;
+  z-index: 2;
+  min-height: 54px; /* Align vertical layout space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .banner-tag {
-  color: var(--warm-brown);
+  color: var(--warm-tan);
   font-size: 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   display: block;
-  margin-bottom: 0.375rem;
-}
-
-.banner-title {
-  color: var(--warm-brown);
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.4;
+  margin-bottom: 0.25rem;
 }
 
 .banner-desc {
   color: var(--warm-brown);
-  opacity: 0.8;
-  font-size: 0.75rem;
-  font-weight: 400;
+  font-size: 0.78rem;
+  font-weight: 500;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Mountain peak SVG placement */
+.banner-mountains-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Search Bar (Mobile app layout) */

@@ -98,22 +98,22 @@ export default function AppViewer() {
   }
 
   return (
-    <div style={{ height: '100dvh', width: '100vw', display: 'flex', flexDirection: 'column', backgroundColor: '#090a0c', fontFamily: 'Outfit, -apple-system, sans-serif' }}>
+    <div style={{ height: '100dvh', width: '100vw', display: 'flex', flexDirection: 'column', backgroundColor: '#0d0c0b', fontFamily: 'Outfit, -apple-system, sans-serif' }}>
       {/* Premium Navigation Header */}
       <div style={{ 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'space-between', 
         padding: '0.75rem 1rem', 
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)', 
-        backgroundColor: '#111317',
+        borderBottom: '1px solid rgba(221, 214, 200, 0.08)', 
+        backgroundColor: '#161413',
         zIndex: 10
       }}>
         <Link to="/" style={{ 
           display: 'flex', 
           alignItems: 'center', 
           gap: '0.375rem', 
-          color: '#c5a880', 
+          color: '#a14a36', 
           textDecoration: 'none', 
           fontSize: '0.875rem', 
           fontWeight: '500' 
@@ -122,7 +122,7 @@ export default function AppViewer() {
           Kembali
         </Link>
         <span style={{ 
-          color: '#ffffff', 
+          color: '#faf6e8', 
           fontSize: '0.875rem', 
           fontWeight: '500', 
           maxWidth: '55%', 
@@ -136,18 +136,18 @@ export default function AppViewer() {
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center', 
-          color: '#a1a1aa', 
+          color: '#8c9096', 
           textDecoration: 'none', 
           padding: '0.375rem', 
           borderRadius: '50%', 
-          backgroundColor: '#1c1e24' 
+          backgroundColor: '#1c1a18' 
         }} title="Unduh PDF">
           <Download style={{ width: '15px', height: '15px' }} />
         </Link>
       </div>
 
       <Worker workerUrl={workerUrl}>
-        <div style={{ flex: 1, overflow: 'auto', backgroundColor: '#090a0c' }}>
+        <div style={{ flex: 1, overflow: 'auto', backgroundColor: '#0d0c0b' }}>
           <Viewer
             fileUrl={pdfUrl}
             theme="dark"

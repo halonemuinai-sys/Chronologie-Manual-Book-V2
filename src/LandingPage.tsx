@@ -225,17 +225,38 @@ export default function LandingPage() {
                   </div>
 
                   {/* Peak Mountains Illustration Vector */}
-                  <svg className="banner-mountains-svg" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 100 L135 40 L155 70 L175 35 L210 100 Z" fill="url(#mountainGrad)" opacity="0.12" />
-                    <path d="M60 100 L105 25 L145 80 L165 50 L200 100 Z" fill="url(#mountainGrad2)" opacity="0.08" />
+                  <svg className="banner-mountains-svg" viewBox="0 0 220 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Background Soft Peak */}
+                    <path d="M120 100 L165 30 L210 100 Z" fill="url(#bgMountainGrad)" opacity="0.06" />
+                    
+                    {/* Main Matterhorn 3D Shaded Peaks */}
+                    {/* Left Shade Face */}
+                    <path d="M140 15 L70 100 L135 100 L142 70 L130 45 Z" fill="url(#mountainLeftGrad)" opacity="0.14" />
+                    {/* Right Light Face */}
+                    <path d="M140 15 L205 100 L135 100 L142 70 L130 45 Z" fill="url(#mountainRightGrad)" opacity="0.05" />
+                    
+                    {/* Swiss Alps Ridge Lines & Slopes */}
+                    <path d="M140 15 L130 45 L142 70 L135 100" stroke="var(--warm-brown)" strokeWidth="1.2" strokeLinecap="round" opacity="0.25" />
+                    <path d="M125 35 L105 70" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.18" />
+                    <path d="M110 50 L90 90" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.15" />
+                    <path d="M152 32 L175 70" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.18" />
+                    <path d="M165 50 L190 90" stroke="var(--warm-brown)" strokeWidth="0.8" strokeLinecap="round" opacity="0.15" />
+
+                    {/* Texture Hatching Lines for snow slopes */}
+                    <path d="M115 70 L108 82 M122 80 L115 92 M158 60 L165 72 M170 78 L177 90" stroke="var(--warm-brown)" strokeWidth="0.6" opacity="0.12" />
+
                     <defs>
-                      <linearGradient id="mountainGrad" x1="155" y1="35" x2="155" y2="100" gradientUnits="userSpaceOnUse">
+                      <linearGradient id="bgMountainGrad" x1="165" y1="30" x2="165" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="var(--warm-tan)" />
+                        <stop offset="1" stopColor="var(--warm-tan)" stopOpacity="0" />
+                      </linearGradient>
+                      <linearGradient id="mountainLeftGrad" x1="105" y1="15" x2="105" y2="100" gradientUnits="userSpaceOnUse">
                         <stop stopColor="var(--warm-brown)" />
                         <stop offset="1" stopColor="var(--warm-brown)" stopOpacity="0" />
                       </linearGradient>
-                      <linearGradient id="mountainGrad2" x1="130" y1="25" x2="130" y2="100" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="var(--warm-tan)" />
-                        <stop offset="1" stopColor="var(--warm-tan)" stopOpacity="0" />
+                      <linearGradient id="mountainRightGrad" x1="172" y1="15" x2="172" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="var(--warm-gold)" />
+                        <stop offset="1" stopColor="var(--warm-gold)" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                   </svg>

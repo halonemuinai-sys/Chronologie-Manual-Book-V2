@@ -7,8 +7,8 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 
 import mapping from './config/mapping.json';
 
-// Use local worker to avoid internet dependency
-import workerUrl from 'pdfjs-dist/build/pdf.worker.js?url';
+// Use stable CDN worker to guarantee compatibility on all mobile browsers
+const workerUrl = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
 
 // Brand helper mapping
 const getBrandFromSlug = (slug: string): string => {

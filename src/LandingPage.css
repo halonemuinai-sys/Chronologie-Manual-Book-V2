@@ -183,20 +183,36 @@
 
 .banner-tag {
   color: var(--warm-tan);
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  min-height: 12px; /* Prevent layout jump */
+}
+
+.banner-desc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.banner-subtitle {
+  color: var(--warm-brown);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1.25;
 }
 
 .banner-desc {
   color: var(--warm-brown);
-  font-size: 0.78rem;
+  opacity: 0.85;
+  font-size: 0.725rem;
   font-weight: 500;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
   letter-spacing: -0.01em;
 }
 

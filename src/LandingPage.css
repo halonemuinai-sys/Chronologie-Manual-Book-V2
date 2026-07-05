@@ -381,10 +381,106 @@
   border: 1px solid rgba(68, 42, 7, 0.12);
 }
 
-.file-size-badge {
-  font-size: 0.625rem;
+.watch-type-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.watch-type-badge.mechanic {
+  background-color: #f4efe8;
+  color: #70583b;
+  border: 1px solid #e7dece;
+}
+
+.watch-type-badge.quartz {
+  background-color: #f0f4f8;
+  color: #4b6a8a;
+  border: 1px solid #d3e0ed;
+}
+
+.watch-type-badge.chrono-mech,
+.watch-type-badge.chrono-quartz {
+  background-color: #faf0ec;
+  color: #a3664d;
+  border: 1px solid #f2dad0;
+}
+
+.watch-type-badge.gmt {
+  background-color: #ecf3f0;
+  color: #4d8a70;
+  border: 1px solid #d0e7de;
+}
+
+.watch-type-badge.digital {
+  background-color: #f3ecf5;
+  color: #804d8a;
+  border: 1px solid #ebd0e7;
+}
+
+.watch-type-badge.garansi {
+  background-color: #f7f6f0;
+  color: #827b58;
+  border: 1px solid #e8e5d3;
+}
+
+.watch-type-badge.generic {
+  background-color: #f5f5f5;
+  color: #666666;
+  border: 1px solid #e5e5e5;
+}
+
+/* Layman physical identifier box styling */
+.watch-layman-box {
+  display: flex;
+  gap: 0.625rem;
+  background-color: #faf9f6;
+  border: 1px solid rgba(68, 42, 7, 0.04);
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
+
+.layman-icon-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.layman-icon {
+  width: 13px;
+  height: 13px;
   color: var(--warm-tan);
-  font-weight: 600;
+  margin-top: 1px;
+}
+
+.layman-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.layman-title {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--warm-tan);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.layman-text {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--warm-brown);
+  opacity: 0.85;
+  margin: 0;
+  line-height: 1.35;
 }
 
 .app-manual-title {

@@ -14,7 +14,11 @@ import {
   HelpCircle, 
   MapPin,
   ArrowRight,
-  Watch
+  Watch,
+  Zap,
+  Clock,
+  Globe,
+  Gauge
 } from 'lucide-react';
 import mapping from './config/mapping.json';
 import './LandingPage.css';
@@ -25,6 +29,7 @@ interface ManualItem {
   title: string;
   brand: string;
   cleanedTitle: string;
+  typeDetails: BrandTypeDetails;
 }
 
 // Brand helper mapping
@@ -55,6 +60,81 @@ const getBrandFromSlug = (slug: string): string => {
     return 'Hamilton';
   }
   return 'Lainnya';
+};
+
+export interface BrandTypeDetails {
+  typeLabel: string;
+  badgeColor: string;
+  laymanDesc: string;
+  iconName: 'battery' | 'gauge' | 'cpu' | 'clock' | 'globe' | 'help';
+}
+
+export const getWatchTypeDetails = (title: string): BrandTypeDetails => {
+  const t = title.toLowerCase();
+  
+  if (t.includes('garansi') || t.includes('warranty')) {
+    return {
+      typeLabel: 'Informasi Garansi',
+      badgeColor: 'garansi',
+      laymanDesc: 'Panduan kartu garansi resmi internasional dan ketentuan servis resmi.',
+      iconName: 'help'
+    };
+  }
+  if (t.includes('gmt') || t.includes('worldtimer') || t.includes('utc')) {
+    return {
+      typeLabel: 'GMT (Dual Time)',
+      badgeColor: 'gmt',
+      laymanDesc: 'Jarum detik menyapu halus, memiliki jarum jam tambahan untuk zona waktu kedua (24-jam).',
+      iconName: 'globe'
+    };
+  }
+  if (t.includes('kronograf') || t.includes('chronograph')) {
+    if (t.includes('quartz') || t.includes('baterai')) {
+      return {
+        typeLabel: 'Kronograf (Quartz)',
+        badgeColor: 'chrono-quartz',
+        laymanDesc: 'Bertenaga baterai, memiliki tombol stopwatch tambahan di samping kanan casing.',
+        iconName: 'gauge'
+      };
+    }
+    return {
+      typeLabel: 'Kronograf Mekanis',
+      badgeColor: 'chrono-mech',
+      laymanDesc: 'Mesin mekanis menyapu halus, memiliki jarum sub-dial kecil dan tombol stopwatch di samping.',
+      iconName: 'gauge'
+    };
+  }
+  if (t.includes('quartz') || t.includes('baterai') || t.includes('baterei')) {
+    return {
+      typeLabel: 'Baterai (Quartz)',
+      badgeColor: 'quartz',
+      laymanDesc: 'Menggunakan baterai, jarum detik bergerak berdetak terputus-putus (patah-patah) per detik.',
+      iconName: 'battery'
+    };
+  }
+  if (t.includes('psr') || t.includes('led') || t.includes('digital')) {
+    return {
+      typeLabel: 'Digital / LED',
+      badgeColor: 'digital',
+      laymanDesc: 'Tampilan waktu angka digital / LED merah tanpa jarum fisik berputar.',
+      iconName: 'cpu'
+    };
+  }
+  if (t.includes('winding') || t.includes('manual') || t.includes('automatic') || t.includes('otomatis') || t.includes('cali') || t.includes('yema') || t.includes('edox') || t.includes('frederique') || t.includes('maen') || t.includes('hudson')) {
+    return {
+      typeLabel: 'Mekanis (Otomatis/Manual)',
+      badgeColor: 'mechanic',
+      laymanDesc: 'Tanpa baterai, jarum detik bergerak menyapu halus (smooth sweep) berkelanjutan.',
+      iconName: 'clock'
+    };
+  }
+  
+  return {
+    typeLabel: 'Panduan Jam Tangan',
+    badgeColor: 'generic',
+    laymanDesc: 'Petunjuk operasional, pengaturan waktu, dan pemeliharaan mesin jam tangan.',
+    iconName: 'clock'
+  };
 };
 
 // Title cleaning helper
@@ -136,7 +216,8 @@ export default function LandingPage() {
         file: value.file,
         title: value.title,
         brand,
-        cleanedTitle: cleanTitle(value.title, brand)
+        cleanedTitle: cleanTitle(value.title, brand),
+        typeDetails: getWatchTypeDetails(value.title)
       };
     });
   }, []);
@@ -337,11 +418,29 @@ export default function LandingPage() {
                       >
                         <div className="card-top">
                           <span className="brand-badge-app">{item.brand}</span>
-                          <span className="file-size-badge">PDF • Guide</span>
+                          <span className={`watch-type-badge ${item.typeDetails.badgeColor}`}>
+                            {item.typeDetails.typeLabel}
+                          </span>
                         </div>
                         
-                        <div>
+                        <div className="card-middle">
                           <h3 className="app-manual-title">{item.cleanedTitle}</h3>
+                        </div>
+
+                        {/* Layman Physical Identification Guide Box */}
+                        <div className="watch-layman-box">
+                          <div className="layman-icon-col">
+                            {item.typeDetails.iconName === 'battery' && <Zap className="layman-icon" />}
+                            {item.typeDetails.iconName === 'gauge' && <Gauge className="layman-icon" />}
+                            {item.typeDetails.iconName === 'cpu' && <Watch className="layman-icon" />}
+                            {item.typeDetails.iconName === 'clock' && <Clock className="layman-icon" />}
+                            {item.typeDetails.iconName === 'globe' && <Globe className="layman-icon" />}
+                            {item.typeDetails.iconName === 'help' && <Info className="layman-icon" />}
+                          </div>
+                          <div className="layman-text-col">
+                            <span className="layman-title">Panduan Ciri Fisik</span>
+                            <p className="layman-text">{item.typeDetails.laymanDesc}</p>
+                          </div>
                         </div>
 
                         <div className="app-actions-row">

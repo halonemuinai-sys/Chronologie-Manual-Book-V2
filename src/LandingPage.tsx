@@ -127,8 +127,6 @@ export default function LandingPage() {
   const [selectedBrand, setSelectedBrand] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const activeBrandInfo = brandInfo[selectedBrand] || brandInfo['All'];
-
   // Process mapping into list
   const manualsList = useMemo((): ManualItem[] => {
     return Object.entries(mapping).map(([slug, value]) => {
@@ -208,24 +206,10 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  {/* Banner Content (Dynamic Tagline + Static Chronologie Branding) */}
+                  {/* Banner Content (Chronologie Brand Awareness) */}
                   <div className="banner-content">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={selectedBrand}
-                        initial={{ opacity: 0, y: -4 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 4 }}
-                        transition={{ duration: 0.15 }}
-                        className="banner-tag"
-                      >
-                        {activeBrandInfo.tag}
-                      </motion.span>
-                    </AnimatePresence>
-                    <div className="banner-desc-wrapper">
-                      <span className="banner-subtitle">Curator of Timepieces</span>
-                      <p className="banner-desc">Sebuah kurasi jam tangan premium berkarakter dengan kisah yang unik</p>
-                    </div>
+                    <span className="banner-tag">Curator of Timepieces</span>
+                    <p className="banner-desc">Sebuah kurasi jam tangan premium berkarakter dengan kisah yang unik</p>
                   </div>
 
                   {/* Watch Blueprint Illustration Vector */}

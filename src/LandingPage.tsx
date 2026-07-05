@@ -224,12 +224,22 @@ export default function LandingPage() {
 
   // Filter list
   const filteredManuals = useMemo(() => {
+    const seen = new Set<string>();
     return manualsList.filter(item => {
       const matchesBrand = selectedBrand === 'All' || item.brand === selectedBrand;
       const matchesSearch = item.cleanedTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
                             item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                             item.brand.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesBrand && matchesSearch;
+      
+      if (!matchesBrand || !matchesSearch) return false;
+      
+      // Deduplicate items that resolve to the same user-facing brand and title
+      const uniqueKey = `${item.brand}-${item.cleanedTitle.toLowerCase()}`;
+      if (seen.has(uniqueKey)) {
+        return false;
+      }
+      seen.add(uniqueKey);
+      return true;
     });
   }, [manualsList, selectedBrand, searchQuery]);
 

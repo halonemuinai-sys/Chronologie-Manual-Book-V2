@@ -290,7 +290,6 @@ export default function LandingPage() {
                         
                         <div>
                           <h3 className="app-manual-title">{item.cleanedTitle}</h3>
-                          <p className="app-manual-ref">Ref: {item.title}</p>
                         </div>
 
                         <div className="app-actions-row">

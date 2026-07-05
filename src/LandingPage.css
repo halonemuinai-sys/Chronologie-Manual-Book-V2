@@ -657,6 +657,49 @@
   margin: 0;
 }
 
+/* Counter stats bar (Showing X of Y / Original PDF badge) */
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1.25rem 0;
+  padding: 0 0.25rem 0.875rem 0.25rem;
+  border-bottom: 1px dashed rgba(68, 42, 7, 0.08);
+}
+
+.stats-count {
+  font-size: 0.725rem;
+  color: var(--warm-tan);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.stats-count span {
+  font-weight: 700;
+  color: var(--warm-brown);
+}
+
+.stats-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: rgba(68, 42, 7, 0.05);
+  border: 1px solid rgba(68, 42, 7, 0.08);
+  padding: 0.25rem 0.625rem;
+  border-radius: 2rem;
+  color: var(--warm-brown);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 3px rgba(68, 42, 7, 0.02);
+}
+
+.stats-badge svg {
+  color: var(--warm-tan);
+  flex-shrink: 0;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }

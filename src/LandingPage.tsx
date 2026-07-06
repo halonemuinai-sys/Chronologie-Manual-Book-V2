@@ -574,7 +574,7 @@ export default function LandingPage() {
                   <span className="banner-tag">Layanan Pelanggan</span>
                   <h3 className="banner-title">Butuh Bantuan Teknis?</h3>
                   <p className="banner-desc">
-                    Tim konsultan horologi Chronologie siap membantu Anda memahami pengoperasian atau klaim garansi jam tangan Anda.
+                    Tim konsultan Chronologie siap membantu Anda memahami pengoperasian atau klaim garansi jam tangan Anda.
                   </p>
                 </div>
 

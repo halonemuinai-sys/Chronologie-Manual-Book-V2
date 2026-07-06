@@ -611,8 +611,8 @@ export default function LandingPage() {
                     Chronologie Boutique
                   </h4>
                   <p className="help-desc" style={{ marginBottom: 0 }}>
-                    Plaza Indonesia, Lantai 1, Unit 120-121<br />
-                    Jl. M.H. Thamrin No. Kav 28-30, Jakarta Pusat<br />
+                    Plaza Senayan, 2nd Floor 258C<br />
+                    Jl Asia Afrika 8, Gelora Bung Karno, Jakarta 10270<br />
                     Indonesia
                   </p>
                 </div>
